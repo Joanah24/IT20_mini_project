@@ -29,4 +29,24 @@ public class InventoryLinkedList {
 
         size++;
     }
+
+    // SEARCH BY NAME
+    public Product searchByName(String targetName) {
+        if (targetName == null || head == null) {
+            return null;
+        }
+
+        InventoryNode current = head;
+        String cleanTarget = targetName.trim();
+
+        while (current != null) {
+            if (current.product.getName().equalsIgnoreCase(cleanTarget)) {
+                return current.product;
+            }
+
+            current = current.next;
+        }
+
+        return null;
+    }
 }
