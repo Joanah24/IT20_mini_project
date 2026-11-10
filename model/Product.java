@@ -1,27 +1,31 @@
 package model;
 
-public class ProductID {
+public class Product {
     private String productId;
     private String name;
+    private double price;
+    private int stockQuantity;
 
-    public ProductID(String productId, String name) {
+    public Product(String productId, String name, double price, int stockQuantity) {
         this.productId = productId;
         this.name = name;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
     }
 
-    public String getProductId() {
-        return productId;
-    }
+    public String getProductId() { return productId; }
+    public void setProductId(String productId) { this.productId = productId; }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getName() {
-        return name;
-    }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getStockQuantity() { return stockQuantity; }
+    public void setStockQuantity(int stockQuantity) { this.stockQuantity = stockQuantity; }
+
+    public String getCategoryDetails() {
+        return "General Product";
     }
 }
