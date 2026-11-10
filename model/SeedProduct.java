@@ -2,7 +2,7 @@ package model;
 
 public class SeedProduct extends Product {
     private String cropType;
-    private double germinationRate; // e.g., 95.5%
+    private double germinationRate; 
 
     public SeedProduct(String productId, String name, double price, int stockQuantity, String cropType, double germinationRate) {
         super(productId, name, price, stockQuantity);

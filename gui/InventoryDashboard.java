@@ -27,14 +27,14 @@ public class InventoryDashboard extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        // --- TOP: TITLE ---
+        // TOP TITTLE
         JPanel panelTop = new JPanel();
         JLabel lblTitle = new JLabel("Agricultural Supply Inventory Management (Scenario #5)");
         lblTitle.setFont(new Font("Arial", Font.BOLD, 18));
         panelTop.add(lblTitle);
         add(panelTop, BorderLayout.NORTH);
 
-        // --- CENTER: TABLE DISPLAY ---
+        
         String[] columnNames = {"ID", "Name", "Type", "Price (₱)", "Stock", "Category Specific Details"};
         tableModel = new DefaultTableModel(columnNames, 0);
         inventoryTable = new JTable(tableModel);
@@ -44,12 +44,12 @@ public class InventoryDashboard extends JFrame {
         scrollPane.setBorder(BorderFactory.createTitledBorder("Current Inventory Records"));
         add(scrollPane, BorderLayout.CENTER);
 
-        // --- RIGHT: CONTROLS & FORMS (Organized with GridBagLayout / Flow) ---
+        
         JPanel panelControls = new JPanel();
         panelControls.setLayout(new BoxLayout(panelControls, BoxLayout.Y_AXIS));
         panelControls.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
-        // 1. Search Panel
+        // Search Panel
         JPanel panelSearch = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         panelSearch.setBorder(BorderFactory.createTitledBorder("Manual Search Control"));
         panelSearch.add(new JLabel("Name:"));
@@ -59,7 +59,7 @@ public class InventoryDashboard extends JFrame {
         panelSearch.add(btnSearch);
         panelControls.add(panelSearch);
 
-        // 2. Add Product Panel (Clean Grid)
+        // 2. Add Product Panel 
         JPanel panelAdd = new JPanel(new GridBagLayout());
         panelAdd.setBorder(BorderFactory.createTitledBorder("Register New Product (IT21 OOP)"));
         GridBagConstraints gbc = new GridBagConstraints();
@@ -105,26 +105,25 @@ public class InventoryDashboard extends JFrame {
         gbc.gridx = 1; txtExtraField2 = new JTextField(12); panelAdd.add(txtExtraField2, gbc);
         row++;
 
-        // Add Button
+        
         gbc.gridx = 0; gbc.gridy = row; gbc.gridwidth = 2;
         JButton btnAddProduct = new JButton("Add Product to List");
         panelAdd.add(btnAddProduct, gbc);
 
         panelControls.add(panelAdd);
         
-        // 3. Stock Management Panel
         JPanel panelStock = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
         panelStock.setBorder(BorderFactory.createTitledBorder("Stock Management"));
         JButton btnUpdateStock = new JButton("Update Stock (Selected Row)");
         panelStock.add(btnUpdateStock);
         panelControls.add(panelStock);
 
-        // Put controls in a scroll pane on the right in case screen height is compact
+        
         JScrollPane rightScrollPane = new JScrollPane(panelControls);
         rightScrollPane.setPreferredSize(new Dimension(380, 500));
         add(rightScrollPane, BorderLayout.EAST);
 
-        // --- EVENT LISTENERS ---
+        
 
         cmbProductType.addActionListener(e -> {
             if (cmbProductType.getSelectedItem().equals("Seed Product")) {
