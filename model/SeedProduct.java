@@ -1,13 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author Richard
- */
-public class SeedProduct {
-    
+public class SeedProduct extends Product {
+    private String cropType;
+
+    public SeedProduct(String productId, String name, double price,
+                       int stockQuantity, String cropType) {
+        super(productId, name, price, stockQuantity);
+        this.cropType = cropType;
+    }
+
+    public String getCropType() {
+        return cropType;
+    }
+
+    public void setCropType(String cropType) {
+        this.cropType = cropType;
+    }
+
+    @Override
+    public String getCategoryDetails() {
+        return "Seed [Crop: " + cropType + "]";
+    }
 }
