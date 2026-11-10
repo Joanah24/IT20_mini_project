@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package datastructure;
 
-/**
- *
- * @author Richard
- */
+import model.Product;
+
 public class InventoryNode {
-    
+    public Product product; // Holds the Product object (Parent or Child)
+    public InventoryNode next; // Reference to the next node in the list
+
+    // Constructor
+    public InventoryNode(Product product) {
+        this.product = product;
+        this.next = null;
+    }
 }
