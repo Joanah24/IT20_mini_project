@@ -49,4 +49,16 @@ public class InventoryLinkedList {
 
         return null;
     }
+
+    // UPDATE STOCK BY NAME
+    public boolean updateStockByName(String targetName, int newStockQuantity) {
+        Product foundProduct = searchByName(targetName);
+
+        if (foundProduct != null) {
+            foundProduct.setStockQuantity(newStockQuantity);
+            return true;
+        }
+
+        return false;
+    }
 }
